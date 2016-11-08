@@ -14,13 +14,13 @@ def list_tasks():
     return jsonify(results)
 
 @app.route('/add_task', methods=['POST'])
-
 def add_task():
+    
     print request.args
-    # description = request.form.get('task')
-    # print description
-    # result = db.insert('task', description=description)
-    # return jsonify(result)
+    description = request.form.get('task')
+    print description
+    result = db.insert('task', description=description)
+    return jsonify(result)
 
 if __name__ == '__main__':
     app.run(debug=True)
