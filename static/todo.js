@@ -3,8 +3,7 @@ $(document).ready(function(){
   function updateList(){
     $.get('/tasks', function(stuff){
       stuff.forEach(function(stuffs){
-        if (stuffs.done === true){
-          $('#task-list').append('<li + id = "'+ stuffs.id + '"+ class = "done" >' + stuffs.description  +'<input type="checkbox" class="check_box">' + '</li>');
+        if (stuffs.done === true){          $('#task-list').append('<li + id = "'+ stuffs.id + '"+ class = "done" >' + stuffs.description  +'<input type="checkbox" class="check_box">' + '</li>');
         }
         else{
        $('#task-list').append('<li + id = "'+ stuffs.id + '">' + stuffs.description  +'<input type="checkbox" class="check_box">' + '</li>');
